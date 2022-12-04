@@ -2,8 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.6">
-      <module name="demo.libs.main" target="11" />
-      <module name="demo.libs.test" target="11" />
       <module name="external_api" target="11" />
       <module name="external_api.main" target="11" />
       <module name="external_api.test" target="11" />

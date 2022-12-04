@@ -1,15 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-plugins {
-    id 'org.springframework.boot' version '2.7.6'
-    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-    id 'org.jetbrains.kotlin.jvm' version '1.6.21'
-    id 'org.jetbrains.kotlin.plugin.spring' version '1.6.21'
-}
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     // 기본 dependencies
@@ -18,19 +6,12 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.integration:spring-integration-test'
+
+    implementation "org.springframework.integration:spring-integration-ip"
+
     // project dependencies
     implementation project(":libs:common")
 }
 
 tasks.register("prepareKotlinBuildScriptModel"){}
 
-tasks.withType(KotlinCompile) {
-    kotlinOptions {
-        freeCompilerArgs = ['-Xjsr305=strict']
-        jvmTarget = '11'
-    }
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
-}
